@@ -1,6 +1,7 @@
 import { Card, CardContent } from "./ui/card";
 import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
 import type { WeatherData, GeocodingResponse } from "@/api/types";
+import { translateWeather } from "@/lib/translations";
 
 interface CurrentWeatherProps {
   data: WeatherData;
@@ -44,7 +45,7 @@ export function CurrentWeather({ data, locationName }: CurrentWeatherProps) {
               </p>
               <div className="space-y-1">
                 <p className="text-sm font-medium text-muted-foreground">
-                  Feels like {formatTemp(feels_like)}
+                  Cảm giác như {formatTemp(feels_like)}
                 </p>
                 <div className="flex gap-2 text-sm font-medium">
                   <span className="flex items-center gap-1 text-blue-500">
@@ -63,14 +64,14 @@ export function CurrentWeather({ data, locationName }: CurrentWeatherProps) {
               <div className="flex items-center gap-2">
                 <Droplets className="h-4 w-4 text-blue-500" />
                 <div className="space-y-0.5">
-                  <p className="text-sm font-medium">Humidity</p>
+                  <p className="text-sm font-medium">Độ ẩm</p>
                   <p className="text-sm text-muted-foreground">{humidity}%</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Wind className="h-4 w-4 text-blue-500" />
                 <div className="space-y-0.5">
-                  <p className="text-sm font-medium">Wind Speed</p>
+                  <p className="text-sm font-medium">Tốc độ gió</p>
                   <p className="text-sm text-muted-foreground">{speed} m/s</p>
                 </div>
               </div>
@@ -86,7 +87,7 @@ export function CurrentWeather({ data, locationName }: CurrentWeatherProps) {
               />
               <div className="absolute bottom-0 text-center">
                 <p className="text-sm font-medium capitalize">
-                  {currentWeather.description}
+                  {translateWeather(currentWeather.description)}
                 </p>
               </div>
             </div>

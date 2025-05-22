@@ -34,7 +34,7 @@ export function HourlyTemperature({ data }: HourlyTemperatureProps) {
   return (
     <Card className="flex-1">
       <CardHeader>
-        <CardTitle>Today's Temperature</CardTitle>
+        <CardTitle>Nhiệt độ hôm nay</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[200px] w-full">
@@ -62,7 +62,7 @@ export function HourlyTemperature({ data }: HourlyTemperatureProps) {
                         <div className="grid grid-cols-2 gap-2">
                           <div className="flex flex-col">
                             <span className="text-[0.70rem] uppercase text-muted-foreground">
-                              Temperature
+                              Nhiệt độ
                             </span>
                             <span className="font-bold">
                               {payload[0].value}°
@@ -70,7 +70,7 @@ export function HourlyTemperature({ data }: HourlyTemperatureProps) {
                           </div>
                           <div className="flex flex-col">
                             <span className="text-[0.70rem] uppercase text-muted-foreground">
-                              Feels Like
+                              Cảm giác như
                             </span>
                             <span className="font-bold">
                               {payload[1].value}°

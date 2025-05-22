@@ -52,7 +52,7 @@ export function useGeolocation() {
             errorMessage = "Location request timed out.";
             break;
           default:
-            errorMessage = "An unknown error occurred.";
+            errorMessage = "Đã xảy ra lỗi không xác định.";
         }
 
         setLocationData({

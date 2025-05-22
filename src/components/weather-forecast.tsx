@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { ArrowDown, ArrowUp, Droplets, Wind } from "lucide-react";
 import { format } from "date-fns";
 import type { ForecastData } from "@/api/types";
+import { vi } from "date-fns/locale";
+import { translateWeather } from "@/lib/translations";
 
 interface WeatherForecastProps {
   data: ForecastData;
@@ -52,7 +54,7 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>5-Day Forecast</CardTitle>
+        <CardTitle>Dự báo 5 ngày</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
@@ -63,10 +65,10 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
             >
               <div>
                 <p className="font-medium">
-                  {format(new Date(day.date * 1000), "EEE, MMM d")}
+                  {format(new Date(day.date * 1000), "EEE, d MMM", { locale: vi })}
                 </p>
                 <p className="text-sm text-muted-foreground capitalize">
-                  {day.weather.description}
+                  {translateWeather(day.weather.description)}
                 </p>
               </div>
 
