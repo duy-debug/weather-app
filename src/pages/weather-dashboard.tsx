@@ -44,12 +44,12 @@ export function WeatherDashboard() {
     return (
       <Alert variant="destructive">
         <AlertTriangle className="h-4 w-4" />
-        <AlertTitle>Location Error</AlertTitle>
+        <AlertTitle>Lỗi vị trí</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
           <p>{locationError}</p>
           <Button variant="outline" onClick={getLocation} className="w-fit">
             <MapPin className="mr-2 h-4 w-4" />
-            Enable Location
+            Bật vị trí
           </Button>
         </AlertDescription>
       </Alert>
@@ -60,12 +60,12 @@ export function WeatherDashboard() {
     return (
       <Alert>
         <MapPin className="h-4 w-4" />
-        <AlertTitle>Location Required</AlertTitle>
+        <AlertTitle>Cần vị trí</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
-          <p>Please enable location access to see your local weather.</p>
+          <p>Vui lòng bật vị trí để xem thời tiết tại nơi bạn đang ở.</p>
           <Button variant="outline" onClick={getLocation} className="w-fit">
             <MapPin className="mr-2 h-4 w-4" />
-            Enable Location
+            Bật vị trí
           </Button>
         </AlertDescription>
       </Alert>
@@ -78,12 +78,12 @@ export function WeatherDashboard() {
     return (
       <Alert variant="destructive">
         <AlertTriangle className="h-4 w-4" />
-        <AlertTitle>Error</AlertTitle>
+        <AlertTitle>Lỗi</AlertTitle>
         <AlertDescription className="flex flex-col gap-4">
-          <p>Failed to fetch weather data. Please try again.</p>
+          <p>Không thể tải dữ liệu thời tiết. Vui lòng thử lại.</p>
           <Button variant="outline" onClick={handleRefresh} className="w-fit">
             <RefreshCw className="mr-2 h-4 w-4" />
-            Retry
+            Thử lại
           </Button>
         </AlertDescription>
       </Alert>

@@ -6,6 +6,7 @@ import { X, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useFavorites } from "@/hooks/use-favorite";
 import { toast } from "sonner";
+import { translateWeather } from "@/lib/translations";
 
 interface FavoriteCityTabletProps {
   id: string;
@@ -43,7 +44,7 @@ function FavoriteCityTablet({
         onClick={(e) => {
           e.stopPropagation();
           onRemove(id);
-          toast.error(`Removed ${name} from Favorites`);
+          toast.error(`Đã xóa ${name} khỏi danh sách yêu thích`);
         }}
       >
         <X className="h-4 w-4" />
@@ -73,7 +74,7 @@ function FavoriteCityTablet({
               {Math.round(weather.main.temp)}°
             </p>
             <p className="text-xs capitalize text-muted-foreground">
-              {weather.weather[0].description}
+              {translateWeather(weather.weather[0].description)}
             </p>
           </div>
         </>

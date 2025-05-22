@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
+import { vi } from "date-fns/locale";
 import { Search, Loader2, Clock, Star, XCircle } from "lucide-react";
 import { useLocationSearch } from "@/hooks/use-weather";
 import { useSearchHistory } from "@/hooks/use-search-history";
@@ -50,23 +51,23 @@ export function CitySearch() {
         onClick={() => setOpen(true)}
       >
         <Search className="mr-2 h-4 w-4" />
-        Search cities...
+        Tìm kiếm thành phố...
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
           <CommandInput
-            placeholder="Search cities..."
+            placeholder="Tìm kiếm thành phố..."
             value={query}
             onValueChange={setQuery}
           />
           <CommandList>
             {query.length > 2 && !isLoading && (
-              <CommandEmpty>No cities found.</CommandEmpty>
+              <CommandEmpty>Không tìm thấy thành phố.</CommandEmpty>
             )}
 
             {/* Favorites Section */}
             {favorites.length > 0 && (
-              <CommandGroup heading="Favorites">
+              <CommandGroup heading="Thành phố yêu thích">
                 {favorites.map((city) => (
                   <CommandItem
                     key={city.id}
@@ -95,7 +96,7 @@ export function CitySearch() {
                 <CommandGroup>
                   <div className="flex items-center justify-between px-2 my-2">
                     <p className="text-xs text-muted-foreground">
-                      Recent Searches
+                      Tìm kiếm gần đây
                     </p>
                     <Button
                       variant="ghost"
@@ -103,7 +104,7 @@ export function CitySearch() {
                       onClick={() => clearHistory.mutate()}
                     >
                       <XCircle className="h-4 w-4" />
-                      Clear
+                      Xóa
                     </Button>
                   </div>
                   {history.map((item) => (
@@ -123,7 +124,7 @@ export function CitySearch() {
                         , {item.country}
                       </span>
                       <span className="ml-auto text-xs text-muted-foreground">
-                        {format(item.searchedAt, "MMM d, h:mm a")}
+                        {format(item.searchedAt, "d MMM, HH:mm", { locale: vi })}
                       </span>
                     </CommandItem>
                   ))}
@@ -134,7 +135,7 @@ export function CitySearch() {
             {/* Search Results */}
             <CommandSeparator />
             {locations && locations.length > 0 && (
-              <CommandGroup heading="Suggestions">
+              <CommandGroup heading="Gợi ý">
                 {isLoading && (
                   <div className="flex items-center justify-center p-4">
                     <Loader2 className="h-4 w-4 animate-spin" />

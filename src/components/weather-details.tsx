@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Sunrise, Sunset, Compass, Gauge } from "lucide-react";
 import { format } from "date-fns";
+import { vi } from "date-fns/locale";
 import type { WeatherData } from "@/api/types";
 
 interface WeatherDetailsProps {
@@ -12,7 +13,7 @@ export function WeatherDetails({ data }: WeatherDetailsProps) {
 
   // Format time using date-fns
   const formatTime = (timestamp: number) => {
-    return format(new Date(timestamp * 1000), "h:mm a");
+    return format(new Date(timestamp * 1000), "HH:mm", { locale: vi });
   };
 
   // Convert wind degree to direction
@@ -25,25 +26,25 @@ export function WeatherDetails({ data }: WeatherDetailsProps) {
 
   const details = [
     {
-      title: "Sunrise",
+      title: "Mặt trời mọc",
       value: formatTime(sys.sunrise),
       icon: Sunrise,
       color: "text-orange-500",
     },
     {
-      title: "Sunset",
+      title: "Mặt trời lặn",
       value: formatTime(sys.sunset),
       icon: Sunset,
       color: "text-blue-500",
     },
     {
-      title: "Wind Direction",
+      title: "Hướng gió",
       value: `${getWindDirection(wind.deg)} (${wind.deg}°)`,
       icon: Compass,
       color: "text-green-500",
     },
     {
-      title: "Pressure",
+      title: "Áp suất",
       value: `${main.pressure} hPa`,
       icon: Gauge,
       color: "text-purple-500",
@@ -53,7 +54,7 @@ export function WeatherDetails({ data }: WeatherDetailsProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Weather Details</CardTitle>
+        <CardTitle>Chi tiết thời tiết</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-6 sm:grid-cols-2">

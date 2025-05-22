@@ -16,7 +16,7 @@ export function FavoriteButton({ data }: FavoriteButtonProps) {
   const handleToggleFavorite = () => {
     if (isCurrentlyFavorite) {
       removeFavorite.mutate(`${data.coord.lat}-${data.coord.lon}`);
-      toast.error(`Removed ${data.name} from Favorites`);
+      toast.error(`Đã xóa ${data.name} khỏi danh sách yêu thích`);
     } else {
       addFavorite.mutate({
         name: data.name,
@@ -24,7 +24,7 @@ export function FavoriteButton({ data }: FavoriteButtonProps) {
         lon: data.coord.lon,
         country: data.sys.country,
       });
-      toast.success(`Added ${data.name} to Favorites`);
+      toast.success(`Đã thêm ${data.name} vào danh sách yêu thích`);
     }
   };
 
