@@ -78,9 +78,6 @@ src/
 
 Mọi đóng góp đều được hoan nghênh! Hãy thoải mái tạo Pull Request.
 
-## Giấy Phép
-
-Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 
 ## Lời Cảm Ơn
 
