@@ -1,96 +1,86 @@
-# Weather App with Next JS, React, Tanstack Query, Shadcn UI, Recharts, Tailwind, Typescript Tutorial 🔥🔥
-## https://youtu.be/BCp_5PoKrvI
+# Weather App with React, TanStack Query, Shadcn UI, Recharts, Tailwind, and TypeScript
 
-![klimate](https://github.com/user-attachments/assets/03aed8a9-f2e1-4fcf-8628-5d1abd0c678c)
+## Overview
 
-### Make sure to create a `.env` file with following variables -
+A modern weather dashboard built with React and TanStack Query, providing real-time weather information and forecasts with a clean, responsive interface.
 
-# Ứng Dụng Thời Tiết với TanStack Query
+## Features
 
-Một ứng dụng thời tiết hiện đại được xây dựng bằng React và TanStack Query, cung cấp thông tin thời tiết thời gian thực và dự báo.
+- Current weather details
+- 5-day weather forecast
+- Location search functionality
+- Reverse geocoding for current location
+- Metric units for temperature and wind speed
+- Responsive design for all devices
+- Dark and light mode support
 
-## Tính Năng
+## Tech Stack
 
-- 🌤️ Thông tin thời tiết hiện tại
-- 📅 Dự báo thời tiết
-- 🔍 Tìm kiếm địa điểm
-- 📍 Định vị ngược (Reverse geocoding)
-- 🌡️ Nhiệt độ theo độ C
-- 🎯 Thiết kế responsive
+- Frontend: React 18, Vite
+- Data Fetching: TanStack Query (React Query)
+- Styling: Tailwind CSS, Shadcn UI
+- Visualization: Recharts
+- Language: TypeScript
+- API: OpenWeatherMap API
 
-## Công Nghệ Sử Dụng
+## Getting Started
 
-- React
-- TanStack Query (React Query)
-- TypeScript
-- OpenWeatherMap API
-- CSS Hiện Đại
+### Prerequisites
 
-## Bắt Đầu
+- Node.js (version 14 or higher)
+- npm or yarn
+- OpenWeatherMap API key
 
-### Yêu Cầu
+### Installation
 
-- Node.js (phiên bản 14 trở lên)
-- npm hoặc yarn
-- API key của OpenWeatherMap
-
-### Cài Đặt
-
-1. Clone repository:
+1. Clone the repository:
 ```bash
 git clone https://github.com/duy-debug/weather-app.git
 cd weather-app
 ```
 
-2. Cài đặt các dependencies:
+2. Install dependencies:
 ```bash
 npm install
-# hoặc
-yarn install
 ```
 
-3. Tạo file `.env` trong thư mục gốc và thêm API key của OpenWeatherMap:
+3. Create a .env file in the root directory and add your OpenWeatherMap API key:
 ```
-VITE_WEATHER_API_KEY=d051f2760596fd730c0e5da464099ee9
+VITE_WEATHER_API_KEY=your_api_key_here
 ```
 
-4. Khởi động server phát triển:
+4. Start the development server:
 ```bash
 npm run dev
-# hoặc
-yarn dev
 ```
 
-## Tích Hợp API
+## API Integration
 
-Ứng dụng sử dụng các endpoint sau của OpenWeatherMap API:
-- Thời tiết hiện tại
-- Dự báo thời tiết 5 ngày
-- API Geocoding để tìm kiếm địa điểm
-- Định vị ngược (Reverse Geocoding)
+The application integrates with the following OpenWeatherMap API endpoints:
+- Current Weather Data
+- 5-Day / 3-Hour Forecast
+- Geocoding API (Location Search)
+- Reverse Geocoding API
 
-## Cấu Trúc Dự Án
+## Project Structure
 
 ```
 src/
-├── api/          # Tích hợp API và types
-├── components/   # Các component React
-├── hooks/        # Custom hooks
-└── utils/        # Các hàm tiện ích
+├── api/          # API integration and type definitions
+├── components/   # Reusable UI components
+├── hooks/        # Custom React hooks
+├── pages/        # Main application views
+├── lib/          # Shared utilities and configurations
+└── context/      # Context providers
 ```
 
-## Đóng Góp
+## Credits
 
-Mọi đóng góp đều được hoan nghênh! Hãy thoải mái tạo Pull Request.
+- Weather data provided by OpenWeatherMap
+- Data fetching solution by TanStack Query
+- UI components by Shadcn UI and Radix UI
+- Charts by Recharts
 
-## Giấy Phép
+## License
 
-Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết.
-
-## Lời Cảm Ơn
-
-- OpenWeatherMap đã cung cấp API dữ liệu thời tiết
-- TanStack Query cho giải pháp lấy và lưu cache dữ liệu
-## Hướng dẫn tham khảo
-https://www.youtube.com/watch?v=BCp_5PoKrvI&t=26s&ab_channel=RoadsideCoder
-
+This project is licensed under the MIT License.
